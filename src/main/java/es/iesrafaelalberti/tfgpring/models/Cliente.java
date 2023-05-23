@@ -22,6 +22,7 @@ public class Cliente {
     private String correo;
     private String contraseña;
     private String fecha_nac;
+    private Boolean admin;
 
     @JsonBackReference
     @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL)
@@ -30,12 +31,13 @@ public class Cliente {
     public Cliente() {
     }
 
-    public Cliente(String nombre, String apellidos, String correo, String contraseña, String fecha_nac, Set<Pedido> pedidos) {
+    public Cliente(String nombre, String apellidos, String correo, String contraseña, String fecha_nac, Boolean admin, Set<Pedido> pedidos) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.correo = correo;
         this.contraseña = contraseña;
         this.fecha_nac = fecha_nac;
+        this.admin = admin;
         this.pedidos = pedidos;
     }
 }
