@@ -1,12 +1,8 @@
 package es.iesrafaelalberti.tfgpring.models;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Getter
@@ -23,17 +19,17 @@ public class ProductoPedido {
     @JoinColumn()
     private Pedido pedido;
 
-    @JsonBackReference
-    @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL)
-    private Set<Producto> productos = new HashSet<>();
+    @ManyToOne
+    @JoinColumn()
+    private Producto producto;
 
 
     public ProductoPedido() {
     }
 
-    public ProductoPedido(Integer cantidad, Pedido pedido, Set<Producto> productos) {
+    public ProductoPedido(Integer cantidad, Pedido pedido, Producto producto) {
         this.cantidad = cantidad;
         this.pedido = pedido;
-        this.productos = productos;
+        this.producto = producto;
     }
 }
