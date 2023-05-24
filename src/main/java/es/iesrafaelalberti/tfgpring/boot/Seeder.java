@@ -49,6 +49,77 @@ public class Seeder implements CommandLineRunner {
                 null,
                 null,
                 null);
+        Producto producto2 = new Producto("Anillo de diamante",
+                "https://i.imgur.com/6mkk4WD.jpg",
+                "Anillo de diamantes, creado en oro de 18 quilates o platino, con un diamante central en talla brillante, engarzado en 6 delicadas garras de forma tradicional, para mostrar toda la luz de la gema. Es un solitario de diamantes tradicional que sin embargo presenta un brazo lleno de diseño y tendencia, con un doble perfil.",
+                100f,
+                "Anillo",
+                "Hombre",
+                "9",
+                null,
+                null,
+                null,
+                null,
+                null,
+                false,
+
+                "Dorado",
+                "14 gramos",
+                "14K",
+                "Diamante",
+                5L,
+                null,
+                null,
+                null);
+        Producto producto3 = new Producto("Anillo de diamante",
+                "https://i.imgur.com/6mkk4WD.jpg",
+                "Anillo de diamantes, creado en oro de 18 quilates o platino, con un diamante central en talla brillante, engarzado en 6 delicadas garras de forma tradicional, para mostrar toda la luz de la gema. Es un solitario de diamantes tradicional que sin embargo presenta un brazo lleno de diseño y tendencia, con un doble perfil.",
+                100f,
+                "Anillo",
+                "Hombre",
+                "9",
+                null,
+                null,
+                null,
+                null,
+                null,
+                false,
+
+                "Dorado",
+                "14 gramos",
+                "14K",
+                "Diamante",
+                5L,
+                null,
+                null,
+                null);
+        Producto producto4 = new Producto("Anillo de diamante",
+                "https://i.imgur.com/6mkk4WD.jpg",
+                "Anillo de diamantes, creado en oro de 18 quilates o platino, con un diamante central en talla brillante, engarzado en 6 delicadas garras de forma tradicional, para mostrar toda la luz de la gema. Es un solitario de diamantes tradicional que sin embargo presenta un brazo lleno de diseño y tendencia, con un doble perfil.",
+                100f,
+                "Anillo",
+                "Hombre",
+                "9",
+                null,
+                null,
+                null,
+                null,
+                null,
+                false,
+
+                "Dorado",
+                "14 gramos",
+                "14K",
+                "Diamante",
+                5L,
+                null,
+                null,
+                null);
+
+        productoRepository.save(producto1);
+        productoRepository.save(producto2);
+        productoRepository.save(producto3);
+        productoRepository.save(producto4);
 
     }
 }

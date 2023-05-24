@@ -25,19 +25,18 @@ public class Cliente {
     private Boolean admin;
 
     @JsonBackReference
-    @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
     private Set<Pedido> pedidos = new HashSet<>();
 
     public Cliente() {
     }
 
-    public Cliente(String nombre, String apellidos, String correo, String contraseña, String fecha_nac, Boolean admin, Set<Pedido> pedidos) {
+    public Cliente(String nombre, String apellidos, String correo, String contraseña, String fecha_nac, Boolean admin) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.correo = correo;
         this.contraseña = contraseña;
         this.fecha_nac = fecha_nac;
         this.admin = admin;
-        this.pedidos = pedidos;
     }
 }

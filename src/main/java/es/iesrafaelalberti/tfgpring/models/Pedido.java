@@ -25,17 +25,16 @@ public class Pedido {
     private Cliente cliente;
 
     @JsonBackReference
-    @OneToMany(mappedBy = "productoPedido", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL)
     private Set<ProductoPedido> productoPedidos = new HashSet<>();
 
 
     public Pedido() {
     }
 
-    public Pedido(String fech_pedido, String informacion, Cliente cliente, Set<ProductoPedido> productoPedidos) {
+    public Pedido(String fech_pedido, String informacion, Cliente cliente) {
         this.fech_pedido = fech_pedido;
         this.informacion = informacion;
         this.cliente = cliente;
-        this.productoPedidos = productoPedidos;
     }
 }

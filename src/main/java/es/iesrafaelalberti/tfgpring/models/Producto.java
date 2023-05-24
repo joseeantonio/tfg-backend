@@ -19,6 +19,7 @@ public class Producto {
 
     private String nombre;
     private String url_img;
+    @Column(columnDefinition = "TEXT")
     private String descripcion;
     private Float precio;
     private String tipo;    //  MIRAR ESTE ATRIBUTO     (collar,pulsera,anillo)
@@ -46,7 +47,7 @@ public class Producto {
     //peso tambien
 
     @JsonBackReference
-    @OneToMany(mappedBy = "productoPedidos", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL)
     private Set<ProductoPedido> productoPedidos = new HashSet<>();
 
     public Producto() {
