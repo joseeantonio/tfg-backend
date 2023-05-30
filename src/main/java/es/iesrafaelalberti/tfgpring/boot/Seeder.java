@@ -1,6 +1,9 @@
 package es.iesrafaelalberti.tfgpring.boot;
 
+import es.iesrafaelalberti.tfgpring.models.Cliente;
+import es.iesrafaelalberti.tfgpring.models.Pedido;
 import es.iesrafaelalberti.tfgpring.models.Producto;
+import es.iesrafaelalberti.tfgpring.models.ProductoPedido;
 import es.iesrafaelalberti.tfgpring.repositories.ClienteRepository;
 import es.iesrafaelalberti.tfgpring.repositories.PedidoRepository;
 import es.iesrafaelalberti.tfgpring.repositories.ProductoPedidoRepository;
@@ -8,6 +11,9 @@ import es.iesrafaelalberti.tfgpring.repositories.ProductoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Component
 public class Seeder implements CommandLineRunner {
@@ -46,7 +52,7 @@ public class Seeder implements CommandLineRunner {
                 "14K",
                 "Diamante",
                 5L,
-                null,
+                "Oro",
                 null,
                 null);
         Producto producto2 = new Producto("Anillo de diamante",
@@ -90,7 +96,7 @@ public class Seeder implements CommandLineRunner {
                 "14K",
                 "Diamante",
                 5L,
-                null,
+                "Oro",
                 null,
                 null);
         Producto producto4 = new Producto("Anillo de diamante",
@@ -112,7 +118,7 @@ public class Seeder implements CommandLineRunner {
                 "14K",
                 "Diamante",
                 5L,
-                null,
+                "Oro",
                 null,
                 null);
 
@@ -120,6 +126,29 @@ public class Seeder implements CommandLineRunner {
         productoRepository.save(producto2);
         productoRepository.save(producto3);
         productoRepository.save(producto4);
+
+
+        Cliente cliente1 = new Cliente("Jose Antonio","Gonzalez Perez","a@a.com","password","21/10/2002",false);
+        clienteRepository.save(cliente1);
+
+
+
+        ProductoPedido productoPedido1 = new ProductoPedido(2,producto1);
+        ProductoPedido productoPedido2 = new ProductoPedido(4,producto2);
+        ProductoPedido productoPedido3 = new ProductoPedido(1,producto3);
+
+        productoPedidoRepository.save(productoPedido1);
+        productoPedidoRepository.save(productoPedido2);
+        productoPedidoRepository.save(productoPedido3);
+
+
+        Set<ProductoPedido> productoPedidos = new HashSet<>();
+        productoPedidos.add(productoPedido1);
+        productoPedidos.add(productoPedido2);
+        productoPedidos.add(productoPedido3);
+
+        Pedido pedido1 = new Pedido("23/34/02","Si no estoy, entregar en mi casa",cliente1,productoPedidos);
+        pedidoRepository.save(pedido1);
 
     }
 }

@@ -27,9 +27,8 @@ public class ProductoPedido {
     public ProductoPedido() {
     }
 
-    public ProductoPedido(Integer cantidad, Pedido pedido, Producto producto) {
+    public ProductoPedido(Integer cantidad, Producto producto) {
         this.cantidad = cantidad;
-        this.pedido = pedido;
         this.producto = producto;
     }
 }

@@ -32,9 +32,10 @@ public class Pedido {
     public Pedido() {
     }
 
-    public Pedido(String fech_pedido, String informacion, Cliente cliente) {
+    public Pedido(String fech_pedido, String informacion, Cliente cliente, Set<ProductoPedido> productoPedidos) {
         this.fech_pedido = fech_pedido;
         this.informacion = informacion;
         this.cliente = cliente;
+        this.productoPedidos = productoPedidos;
     }
 }
