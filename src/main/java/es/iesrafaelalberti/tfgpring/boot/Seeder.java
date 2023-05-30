@@ -137,11 +137,6 @@ public class Seeder implements CommandLineRunner {
         ProductoPedido productoPedido2 = new ProductoPedido(4,producto2);
         ProductoPedido productoPedido3 = new ProductoPedido(1,producto3);
 
-        productoPedidoRepository.save(productoPedido1);
-        productoPedidoRepository.save(productoPedido2);
-        productoPedidoRepository.save(productoPedido3);
-
-
         Set<ProductoPedido> productoPedidos = new HashSet<>();
         productoPedidos.add(productoPedido1);
         productoPedidos.add(productoPedido2);
