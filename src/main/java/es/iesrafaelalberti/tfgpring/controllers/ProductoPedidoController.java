@@ -1,7 +1,9 @@
 package es.iesrafaelalberti.tfgpring.controllers;
 
+import es.iesrafaelalberti.tfgpring.dto.ProductoPedidoCreateDTO;
 import es.iesrafaelalberti.tfgpring.models.ProductoPedido;
 import es.iesrafaelalberti.tfgpring.repositories.ProductoPedidoRepository;
+import es.iesrafaelalberti.tfgpring.services.ProductoPedidoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +17,9 @@ public class ProductoPedidoController {
 
     @Autowired
     ProductoPedidoRepository productoPedidoRepository;
+
+    @Autowired
+    ProductoPedidoService productoPedidoService;
 
 //    Vemos todos los productosPedidos
     @GetMapping("/productosPedidos")
@@ -30,9 +35,12 @@ public class ProductoPedidoController {
 
 //    Creamos un productoPedido con la informacion del body
     @PostMapping("/productosPedidos/create")
-    public ResponseEntity<Object> create(@RequestBody ProductoPedido productoPedido) {
-        productoPedidoRepository.save(productoPedido);
-        return new ResponseEntity<>(productoPedido, HttpStatus.OK);
+    public ResponseEntity<Object> create(@RequestBody ProductoPedidoCreateDTO productoPedidoCreateDTO) {
+        ProductoPedido productoPedido = productoPedidoService.productoPedidoCreate(productoPedidoCreateDTO);
+
+        return new ResponseEntity<>(
+                productoPedido, HttpStatus.OK
+        );
     }
 
 //    Eliminamos un productoPedido con el id que pongamos en la ruta

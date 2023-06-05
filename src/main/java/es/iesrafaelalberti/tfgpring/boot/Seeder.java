@@ -3,7 +3,6 @@ package es.iesrafaelalberti.tfgpring.boot;
 import es.iesrafaelalberti.tfgpring.models.Cliente;
 import es.iesrafaelalberti.tfgpring.models.Pedido;
 import es.iesrafaelalberti.tfgpring.models.Producto;
-import es.iesrafaelalberti.tfgpring.models.ProductoPedido;
 import es.iesrafaelalberti.tfgpring.repositories.ClienteRepository;
 import es.iesrafaelalberti.tfgpring.repositories.PedidoRepository;
 import es.iesrafaelalberti.tfgpring.repositories.ProductoPedidoRepository;
@@ -13,7 +12,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.util.HashSet;
-import java.util.Set;
 
 @Component
 public class Seeder implements CommandLineRunner {
@@ -132,18 +130,12 @@ public class Seeder implements CommandLineRunner {
         clienteRepository.save(cliente1);
 
 
-
-        ProductoPedido productoPedido1 = new ProductoPedido(2,producto1);
-        ProductoPedido productoPedido2 = new ProductoPedido(4,producto2);
-        ProductoPedido productoPedido3 = new ProductoPedido(1,producto3);
-
-        Set<ProductoPedido> productoPedidos = new HashSet<>();
-        productoPedidos.add(productoPedido1);
-        productoPedidos.add(productoPedido2);
-        productoPedidos.add(productoPedido3);
-
-        Pedido pedido1 = new Pedido("23/34/02","Si no estoy, entregar en mi casa",cliente1,productoPedidos);
+        Pedido pedido1 = new Pedido("23/34/02", "Si no estoy, entregar en mi casa", cliente1, new HashSet<>());
         pedidoRepository.save(pedido1);
+
+
+
+
 
     }
 }
