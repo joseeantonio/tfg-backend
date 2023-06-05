@@ -19,16 +19,17 @@ public class ProductoPedido {
     private Integer cantidad;
 
     @ManyToOne
-    @JoinColumn()
+    @JoinColumn(name = "pedido_id")
     private Pedido pedido;
 
     @ManyToOne
-    @JoinColumn()
+    @JoinColumn(name = "producto_id")
     private Producto producto;
 
 
-    public ProductoPedido(Integer cantidad, Producto producto) {
+    public ProductoPedido(Integer cantidad, Pedido pedido, Producto producto) {
         this.cantidad = cantidad;
+        this.pedido = pedido;
         this.producto = producto;
     }
 

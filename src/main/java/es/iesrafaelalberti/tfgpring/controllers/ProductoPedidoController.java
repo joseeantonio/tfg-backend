@@ -1,6 +1,7 @@
 package es.iesrafaelalberti.tfgpring.controllers;
 
 import es.iesrafaelalberti.tfgpring.dto.ProductoPedidoCreateDTO;
+import es.iesrafaelalberti.tfgpring.dto.ProductoPedidoDTO;
 import es.iesrafaelalberti.tfgpring.models.ProductoPedido;
 import es.iesrafaelalberti.tfgpring.repositories.ProductoPedidoRepository;
 import es.iesrafaelalberti.tfgpring.services.ProductoPedidoService;
@@ -10,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
+import java.util.stream.StreamSupport;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
@@ -24,7 +26,11 @@ public class ProductoPedidoController {
 //    Vemos todos los productosPedidos
     @GetMapping("/productosPedidos")
     public ResponseEntity<Object> index() {
-        return new ResponseEntity<>(productoPedidoRepository.findAll(), HttpStatus.OK);
+        return new ResponseEntity<>(
+                StreamSupport.stream(productoPedidoRepository.findAll().spliterator(), false)
+                        .map(ProductoPedidoDTO::new),
+                HttpStatus.OK
+        );
     }
 
 //    Vemos el ProductoPedido con ese id que pongamos en la ruta
@@ -36,10 +42,10 @@ public class ProductoPedidoController {
 //    Creamos un productoPedido con la informacion del body
     @PostMapping("/productosPedidos/create")
     public ResponseEntity<Object> create(@RequestBody ProductoPedidoCreateDTO productoPedidoCreateDTO) {
-        ProductoPedido productoPedido = productoPedidoService.productoPedidoCreate(productoPedidoCreateDTO);
 
         return new ResponseEntity<>(
-                productoPedido, HttpStatus.OK
+                new ProductoPedidoDTO(productoPedidoService.productoPedidoCreate(productoPedidoCreateDTO)),
+                HttpStatus.OK
         );
     }
 

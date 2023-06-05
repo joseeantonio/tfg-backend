@@ -24,7 +24,7 @@ public class Pedido {
     private String informacion;
 
     @ManyToOne
-    @JoinColumn()
+    @JoinColumn(name = "cliente_id")
     private Cliente cliente;
 
     @JsonBackReference

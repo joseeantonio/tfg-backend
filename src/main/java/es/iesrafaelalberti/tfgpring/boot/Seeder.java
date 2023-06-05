@@ -3,6 +3,7 @@ package es.iesrafaelalberti.tfgpring.boot;
 import es.iesrafaelalberti.tfgpring.models.Cliente;
 import es.iesrafaelalberti.tfgpring.models.Pedido;
 import es.iesrafaelalberti.tfgpring.models.Producto;
+import es.iesrafaelalberti.tfgpring.models.ProductoPedido;
 import es.iesrafaelalberti.tfgpring.repositories.ClienteRepository;
 import es.iesrafaelalberti.tfgpring.repositories.PedidoRepository;
 import es.iesrafaelalberti.tfgpring.repositories.ProductoPedidoRepository;
@@ -133,8 +134,8 @@ public class Seeder implements CommandLineRunner {
         Pedido pedido1 = new Pedido("23/34/02", "Si no estoy, entregar en mi casa", cliente1, new HashSet<>());
         pedidoRepository.save(pedido1);
 
-
-
+        ProductoPedido productoPedido1 = new ProductoPedido(1,pedido1,producto1);
+        productoPedidoRepository.save(productoPedido1);
 
 
     }
