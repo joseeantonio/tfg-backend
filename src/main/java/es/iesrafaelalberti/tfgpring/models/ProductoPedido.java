@@ -1,6 +1,5 @@
 package es.iesrafaelalberti.tfgpring.models;
 
-import es.iesrafaelalberti.tfgpring.dto.ProductoPedidoCreateDTO;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -31,9 +30,5 @@ public class ProductoPedido {
         this.cantidad = cantidad;
         this.pedido = pedido;
         this.producto = producto;
-    }
-
-    public ProductoPedido(ProductoPedidoCreateDTO productoPedidoCreateDTO) {
-        this.cantidad = productoPedidoCreateDTO.getCantidad();
     }
 }
