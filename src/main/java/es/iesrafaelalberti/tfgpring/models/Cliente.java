@@ -20,6 +20,7 @@ public class Cliente {
     private String nombre;
     private String apellidos;
     private String correo;
+    private String username;
     private String contraseña;
     private String fecha_nac;
     private Boolean admin;
@@ -31,12 +32,13 @@ public class Cliente {
     public Cliente() {
     }
 
-    public Cliente(String nombre, String apellidos, String correo, String contraseña, String fecha_nac, Boolean admin) {
+    public Cliente(String nombre,String username, String apellidos, String correo, String contraseña, String fecha_nac, Boolean admin) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.correo = correo;
         this.contraseña = contraseña;
         this.fecha_nac = fecha_nac;
         this.admin = admin;
+        this.username = username;
     }
 }

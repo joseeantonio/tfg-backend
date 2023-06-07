@@ -127,7 +127,7 @@ public class Seeder implements CommandLineRunner {
         productoRepository.save(producto4);
 
 
-        Cliente cliente1 = new Cliente("Jose Antonio","Gonzalez Perez","a@a.com","password","21/10/2002",false);
+        Cliente cliente1 = new Cliente("Jose Antonio","pepito","Gonzalez Perez","a@a.com","password","21/10/2002",false);
         clienteRepository.save(cliente1);
 
 
