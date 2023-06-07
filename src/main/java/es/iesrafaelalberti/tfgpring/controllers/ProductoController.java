@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -53,6 +54,47 @@ public class ProductoController {
             return new ResponseEntity<>(producto, HttpStatus.OK);
         }
         return new ResponseEntity<>(false, HttpStatus.NOT_FOUND);
+    }
+
+    @GetMapping("/productos/tipo/{tipo}")
+    public ResponseEntity<Object> getByTipo(@PathVariable("tipo") String tipo) {
+        List<Producto> productos = productoRepository.findByTipo(tipo);
+        if (productos.isEmpty()) {
+            return new ResponseEntity<>("No se encontraron productos con el tipo especificado", HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(productos, HttpStatus.OK);
+    }
+
+    @GetMapping("/productos/tipo/{tipo}/orden/{orden}")
+    public ResponseEntity<Object> index(@PathVariable("tipo") String tipo, @PathVariable("orden") String orden) {
+        List<Producto> productos;
+
+        if (orden.equalsIgnoreCase("asc")) {
+            productos = productoRepository.findByTipoOrderByPrecioAsc(tipo);
+        } else if (orden.equalsIgnoreCase("desc")) {
+            productos = productoRepository.findByTipoOrderByPrecioDesc(tipo);
+        } else {
+            // Si no se proporciona un valor válido para 'orden', se devuelve un error
+            return new ResponseEntity<>("El parámetro 'orden' debe ser 'asc' o 'desc'.", HttpStatus.BAD_REQUEST);
+        }
+
+        return new ResponseEntity<>(productos, HttpStatus.OK);
+    }
+
+    @GetMapping("/productos/orden/{orden}")
+    public ResponseEntity<Object> index(@PathVariable("orden") String orden) {
+        List<Producto> productos;
+
+        if (orden.equalsIgnoreCase("asc")) {
+            productos = productoRepository.findAllByOrderByPrecioAsc();
+        } else if (orden.equalsIgnoreCase("desc")) {
+            productos = productoRepository.findAllByOrderByPrecioDesc();
+        } else {
+            // Si no se proporciona un valor válido para 'orden', se devuelve un error
+            return new ResponseEntity<>("El parámetro 'orden' debe ser 'asc' o 'desc'.", HttpStatus.BAD_REQUEST);
+        }
+
+        return new ResponseEntity<>(productos, HttpStatus.OK);
     }
 
 }
