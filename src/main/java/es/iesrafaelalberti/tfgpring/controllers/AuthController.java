@@ -2,11 +2,17 @@ package es.iesrafaelalberti.tfgpring.controllers;
 
 
 import es.iesrafaelalberti.tfgpring.services.TokenService;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.io.Serializable;
 
 @RestController
 public class AuthController {
@@ -20,11 +26,19 @@ public class AuthController {
     }
 
     @PostMapping("/token")
-    public String token(Authentication authentication) {
+    public TokenResponse token(Authentication authentication) {
         LOG.debug("Token requested for user: '{}'", authentication.getName());
         String token = tokenService.generateToken(authentication);
         LOG.debug("Token granted: {}", token);
-        return token;
+        return new TokenResponse(token);
+    }
+
+    @AllArgsConstructor
+    @NoArgsConstructor
+    @Getter
+    @Setter
+    class TokenResponse implements Serializable {
+        private String token;
     }
 
 }
