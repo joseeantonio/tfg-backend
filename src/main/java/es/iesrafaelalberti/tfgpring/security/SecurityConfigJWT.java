@@ -67,9 +67,8 @@ public class SecurityConfigJWT {
 				.authorizeHttpRequests(auth -> auth.requestMatchers(HttpMethod.OPTIONS, "/**").permitAll())
 				// you can authorize/authenticate requests based on roles by matcher (regular expression)
 				//.authorizeHttpRequests(auth -> auth.requestMatchers("/prisoners/**").hasAuthority("SCOPE_ADMIN"))
-				.authorizeHttpRequests(auth -> auth.requestMatchers("/v3/**").permitAll())
-				.authorizeHttpRequests(auth -> auth.requestMatchers("/swagger-ui/**").permitAll())
-				.authorizeHttpRequests(auth -> auth.requestMatchers("/swagger**").permitAll())
+				.authorizeHttpRequests(auth ->
+						auth.requestMatchers(HttpMethod.GET, "/productos/**").permitAll())
 				.authorizeHttpRequests(auth -> auth.anyRequest().authenticated())
 				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 				.oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt)
@@ -89,7 +88,7 @@ public class SecurityConfigJWT {
 		return http
 				.cors().configurationSource(corsConfigurationSource()).and()
 				.securityMatcher("/token**")
-				.authorizeHttpRequests(auth -> auth.requestMatchers(HttpMethod.OPTIONS).permitAll())
+				.authorizeHttpRequests(auth -> auth.requestMatchers(HttpMethod.OPTIONS, "/**").permitAll())
 				.authorizeHttpRequests(auth -> auth.anyRequest().authenticated())
 				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 				.csrf(AbstractHttpConfigurer::disable)
