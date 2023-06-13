@@ -15,10 +15,10 @@ public class MyUserDetailsService implements UserDetailsService {
     private ClienteRepository clienteRepository;
 
     @Override
-    public UserDetails loadUserByUsername(String username) {
-        Cliente cliente = clienteRepository.findByUsername(username);
+    public UserDetails loadUserByUsername(String email) {
+        Cliente cliente = clienteRepository.findByCorreo(email);
         if (cliente == null) {
-            throw new UsernameNotFoundException(username);
+            throw new UsernameNotFoundException(email);
         }
         return new MyUserPrincipal(cliente);
     }

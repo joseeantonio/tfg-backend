@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -36,7 +37,7 @@ public class Cliente {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.correo = correo;
-        this.contraseña = contraseña;
+        this.contraseña = new BCryptPasswordEncoder().encode(contraseña);;
         this.fecha_nac = fecha_nac;
         this.admin = admin;
         this.username = username;
