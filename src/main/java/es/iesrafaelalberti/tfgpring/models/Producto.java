@@ -24,15 +24,14 @@ public class Producto {
     private Float precio;
     private String tipo;    //  MIRAR ESTE ATRIBUTO     (collar,pulsera,anillo)
     private String sexo;    //  (hombre,mujer,unisex)
-    private String talla;   //  SEGUN EL TIPO DE PRODUCTO QUE SEA
+    private Float talla;   //  SEGUN EL TIPO DE PRODUCTO QUE SEA
 
     //RELOJES
-    private Float diametro;
     private String materialCaja;
     private String materialCorrea;
     private String colorCorrea;
     private String tipoMovimiento;
-    private boolean resistenteAgua;
+    private Float resistenteAgua;
 
     //ANILLOS
     private String color;
@@ -53,7 +52,7 @@ public class Producto {
     public Producto() {
     }
 
-    public Producto(String nombre, String url_img, String descripcion, Float precio, String tipo, String sexo, String talla, Float diametro, String materialCaja, String materialCorrea, String colorCorrea, String tipoMovimiento, boolean resistenteAgua, String color, String peso, String calidadMinima, String piedra, Long numeroPiedra, String material, String cierre, Set<ProductoPedido> productoPedidos) {
+    public Producto(String nombre, String url_img, String descripcion, Float precio, String tipo, String sexo, Float talla, String materialCaja, String materialCorrea, String colorCorrea, String tipoMovimiento, Float resistenteAgua, String color, String peso, String calidadMinima, String piedra, Long numeroPiedra, String material, String cierre, Set<ProductoPedido> productoPedidos) {
         this.nombre = nombre;
         this.url_img = url_img;
         this.descripcion = descripcion;
@@ -61,7 +60,6 @@ public class Producto {
         this.tipo = tipo;
         this.sexo = sexo;
         this.talla = talla;
-        this.diametro = diametro;
         this.materialCaja = materialCaja;
         this.materialCorrea = materialCorrea;
         this.colorCorrea = colorCorrea;

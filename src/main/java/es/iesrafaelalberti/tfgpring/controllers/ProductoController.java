@@ -3,6 +3,9 @@ package es.iesrafaelalberti.tfgpring.controllers;
 import es.iesrafaelalberti.tfgpring.models.Producto;
 import es.iesrafaelalberti.tfgpring.repositories.ProductoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,26 +20,26 @@ public class ProductoController {
     @Autowired
     ProductoRepository productoRepository;
 
-//    Vemos todos los productos
+    //    Vemos todos los productos
     @GetMapping("/productos")
     public ResponseEntity<Object> index() {
         return new ResponseEntity<>(productoRepository.findAll(), HttpStatus.OK);
     }
 
-//    Vemos el producto con ese id que pongamos en la ruta
+    //    Vemos el producto con ese id que pongamos en la ruta
     @GetMapping("/productos/{id}")
     public ResponseEntity<Object> show(@PathVariable("id") Long id) {
         return new ResponseEntity<>(productoRepository.findById(id), HttpStatus.OK);
     }
 
-//    Creamos un producto con la informacion del body
+    //    Creamos un producto con la informacion del body
     @PostMapping("/productos/create")
     public ResponseEntity<Object> create(@RequestBody Producto producto) {
         productoRepository.save(producto);
         return new ResponseEntity<>(producto, HttpStatus.OK);
     }
 
-//    Eliminamos un producto con el id que pongamos en la ruta
+    //    Eliminamos un producto con el id que pongamos en la ruta
     @DeleteMapping("/productos/{id}")
     public ResponseEntity<Object> delete(@PathVariable("id") Long id) {
         Optional<Producto> producto = productoRepository.findById(id);
@@ -44,7 +47,7 @@ public class ProductoController {
         return new ResponseEntity<>(producto.isPresent(), HttpStatus.OK);
     }
 
-//    Actualizamos un producto , cogiendo datos del body y con el id que ponemos en la ruta
+    //    Actualizamos un producto , cogiendo datos del body y con el id que ponemos en la ruta
     @PutMapping("/productos/{id}")
     public ResponseEntity<Object> update(@PathVariable("id") Long id, @RequestBody Producto producto) {
         Optional<Producto> antiguoProducto = productoRepository.findById(id);
@@ -94,6 +97,23 @@ public class ProductoController {
             return new ResponseEntity<>("El parámetro 'orden' debe ser 'asc' o 'desc'.", HttpStatus.BAD_REQUEST);
         }
 
+        return new ResponseEntity<>(productos, HttpStatus.OK);
+    }
+
+    @GetMapping("/productos/paginacion/{cantidad}")
+    public ResponseEntity<Object> getPaginatedProductos(@PathVariable("cantidad") int cantidad) {
+        Pageable pageable = PageRequest.of(0, cantidad);
+        Page<Producto> productos = productoRepository.findAll(pageable);
+
+        return new ResponseEntity<>(productos.getContent(), HttpStatus.OK);
+    }
+
+    @GetMapping("/productos/nombre/{nombre}")
+    public ResponseEntity<Object> getByNombre(@PathVariable("nombre") String nombre) {
+        List<Producto> productos = productoRepository.findByNombreContainingIgnoreCase(nombre);
+        if (productos.isEmpty()) {
+            return new ResponseEntity<>("No se encontraron productos con el nombre especificado", HttpStatus.NOT_FOUND);
+        }
         return new ResponseEntity<>(productos, HttpStatus.OK);
     }
 
