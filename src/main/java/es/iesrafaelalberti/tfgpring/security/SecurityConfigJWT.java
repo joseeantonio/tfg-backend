@@ -69,6 +69,8 @@ public class SecurityConfigJWT {
 				//.authorizeHttpRequests(auth -> auth.requestMatchers("/prisoners/**").hasAuthority("SCOPE_ADMIN"))
 				.authorizeHttpRequests(auth ->
 						auth.requestMatchers(HttpMethod.GET, "/productos/**").permitAll())
+				.authorizeHttpRequests(auth ->
+						auth.requestMatchers(HttpMethod.POST, "/clientes/create").permitAll())
 				.authorizeHttpRequests(auth -> auth.anyRequest().authenticated())
 				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 				.oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt)
