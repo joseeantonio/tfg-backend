@@ -137,8 +137,8 @@ public class Seeder implements CommandLineRunner {
                 "Oro",
                 null,
                 null);
-        Producto producto6 = new Producto("Anillo de diamante",
-                "https://i.imgur.com/6mkk4WD.jpg",
+        Producto producto6 = new Producto("Reloj ORIENT",
+                "https://i.imgur.com/0Ylf6tj.jpg",
                 "Anillo de diamantes, creado en oro de 18 quilates o platino, con un diamante central en talla brillante, engarzado en 6 delicadas garras de forma tradicional, para mostrar toda la luz de la gema. Es un solitario de diamantes tradicional que sin embargo presenta un brazo lleno de diseño y tendencia, con un doble perfil.",
                 100f,
                 "anillo",
@@ -309,8 +309,8 @@ public class Seeder implements CommandLineRunner {
                 null,
                 null);
 
-        Producto producto14 = new Producto("Anillo de diamante",
-                "https://i.imgur.com/6mkk4WD.jpg",
+        Producto producto14 = new Producto("Reloj ORIENT oscuro",
+                "https://i.imgur.com/JmHyvrs.jpg",
                 "Anillo de diamantes, creado en oro de 18 quilates o platino, con un diamante central en talla brillante, engarzado en 6 delicadas garras de forma tradicional, para mostrar toda la luz de la gema. Es un solitario de diamantes tradicional que sin embargo presenta un brazo lleno de diseño y tendencia, con un doble perfil.",
                 100f,
                 "anillo",
@@ -331,8 +331,8 @@ public class Seeder implements CommandLineRunner {
                 null,
                 null);
 
-        Producto producto15 = new Producto("Anillo de diamante",
-                "https://i.imgur.com/6mkk4WD.jpg",
+        Producto producto15 = new Producto("Reloj dorado",
+                "https://i.imgur.com/Nfwud1O.jpg",
                 "Anillo de diamantes, creado en oro de 18 quilates o platino, con un diamante central en talla brillante, engarzado en 6 delicadas garras de forma tradicional, para mostrar toda la luz de la gema. Es un solitario de diamantes tradicional que sin embargo presenta un brazo lleno de diseño y tendencia, con un doble perfil.",
                 100f,
                 "anillo",
@@ -397,8 +397,8 @@ public class Seeder implements CommandLineRunner {
                 "mosqueton",
                 null);
 
-        Producto producto18 = new Producto("Anillo de diamante",
-                "https://i.imgur.com/6mkk4WD.jpg",
+        Producto producto18 = new Producto("Reloj Maserati",
+                "https://i.imgur.com/w5GJK6m.jpg",
                 "Anillo de diamantes, creado en oro de 18 quilates o platino, con un diamante central en talla brillante, engarzado en 6 delicadas garras de forma tradicional, para mostrar toda la luz de la gema. Es un solitario de diamantes tradicional que sin embargo presenta un brazo lleno de diseño y tendencia, con un doble perfil.",
                 100f,
                 "anillo",
@@ -419,8 +419,8 @@ public class Seeder implements CommandLineRunner {
                 null,
                 null);
 
-        Producto producto19 = new Producto("Anillo de diamante",
-                "https://i.imgur.com/6mkk4WD.jpg",
+        Producto producto19 = new Producto("Reloj Maserati",
+                "https://i.imgur.com/LiCuKTg.jpg",
                 "Anillo de diamantes, creado en oro de 18 quilates o platino, con un diamante central en talla brillante, engarzado en 6 delicadas garras de forma tradicional, para mostrar toda la luz de la gema. Es un solitario de diamantes tradicional que sin embargo presenta un brazo lleno de diseño y tendencia, con un doble perfil.",
                 100f,
                 "anillo",
@@ -441,8 +441,8 @@ public class Seeder implements CommandLineRunner {
                 null,
                 null);
 
-        Producto producto20 = new Producto("Collar de diamante",
-                "https://i.imgur.com/6mkk4WD.jpg",
+        Producto producto20 = new Producto("Reloj MVMT",
+                "https://i.imgur.com/nvyu9AL.jpg",
                 "Anillo de diamantes, creado en oro de 18 quilates o platino, con un diamante central en talla brillante, engarzado en 6 delicadas garras de forma tradicional, para mostrar toda la luz de la gema. Es un solitario de diamantes tradicional que sin embargo presenta un brazo lleno de diseño y tendencia, con un doble perfil.",
                 100f,
                 "collar",
@@ -464,8 +464,8 @@ public class Seeder implements CommandLineRunner {
                 "mosqueton",
                 null);
 
-        Producto producto21 = new Producto("Anillo de diamante",
-                "https://i.imgur.com/6mkk4WD.jpg",
+        Producto producto21 = new Producto("Reloj M-FORCE",
+                "https://i.imgur.com/DT3kAV4.jpg",
                 "Anillo de diamantes, creado en oro de 18 quilates o platino, con un diamante central en talla brillante, engarzado en 6 delicadas garras de forma tradicional, para mostrar toda la luz de la gema. Es un solitario de diamantes tradicional que sin embargo presenta un brazo lleno de diseño y tendencia, con un doble perfil.",
                 100f,
                 "anillo",
@@ -486,8 +486,8 @@ public class Seeder implements CommandLineRunner {
                 null,
                 null);
 
-        Producto producto22 = new Producto("Reloj deportivo",
-                "https://i.imgur.com/6mkk4WD.jpg",
+        Producto producto22 = new Producto("Reloj Versace",
+                "https://i.imgur.com/tlbw3yY.jpg",
                 "Anillo de diamantes, creado en oro de 18 quilates o platino, con un diamante central en talla brillante, engarzado en 6 delicadas garras de forma tradicional, para mostrar toda la luz de la gema. Es un solitario de diamantes tradicional que sin embargo presenta un brazo lleno de diseño y tendencia, con un doble perfil.",
                 100f,
                 "reloj",
@@ -539,7 +539,7 @@ public class Seeder implements CommandLineRunner {
 
 
 
-        Cliente cliente1 = new Cliente("Jose Antonio","peri02","Gonzalez Perez","a@a.com","password","21/10/2002",false);
+        Cliente cliente1 = new Cliente("Jose Antonio","peri02","Gonzalez Perez","a@a.com","password","21/10/2002",true);
         clienteRepository.save(cliente1);
 
 
