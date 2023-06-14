@@ -30,7 +30,7 @@ public class MyUserPrincipal implements UserDetails {
 
     @Override
     public String getUsername() {
-        return cliente.getUsername();
+        return cliente.getCorreo();
     }
 
     @Override

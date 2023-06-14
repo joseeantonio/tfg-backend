@@ -33,7 +33,7 @@ public class Seeder implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         Producto producto1 = new Producto("Anillo de diamante",
-                "https://i.imgur.com/6mkk4WD.jpg",
+                "https://i.imgur.com/8dI7t5L.jpg",
                 "Anillo de diamantes, creado en oro de 18 quilates o platino, con un diamante central en talla brillante, engarzado en 6 delicadas garras de forma tradicional, para mostrar toda la luz de la gema. Es un solitario de diamantes tradicional que sin embargo presenta un brazo lleno de diseño y tendencia, con un doble perfil.",
                 100f,
                 "anillo",
@@ -54,7 +54,7 @@ public class Seeder implements CommandLineRunner {
                 null,
                 null);
         Producto producto2 = new Producto("Anillo de diamante",
-                "https://i.imgur.com/6mkk4WD.jpg",
+                "https://i.imgur.com/4Bik0an.jpg",
                 "Anillo de diamantes, creado en oro de 18 quilates o platino, con un diamante central en talla brillante, engarzado en 6 delicadas garras de forma tradicional, para mostrar toda la luz de la gema. Es un solitario de diamantes tradicional que sin embargo presenta un brazo lleno de diseño y tendencia, con un doble perfil.",
                 100f,
                 "anillo",
@@ -75,7 +75,7 @@ public class Seeder implements CommandLineRunner {
                 null,
                 null);
         Producto producto3 = new Producto("Anillo de diamante",
-                "https://i.imgur.com/6mkk4WD.jpg",
+                "https://i.imgur.com/XB21l8w.jpg",
                 "Anillo de diamantes, creado en oro de 18 quilates o platino, con un diamante central en talla brillante, engarzado en 6 delicadas garras de forma tradicional, para mostrar toda la luz de la gema. Es un solitario de diamantes tradicional que sin embargo presenta un brazo lleno de diseño y tendencia, con un doble perfil.",
                 100f,
                 "anillo",
@@ -96,7 +96,7 @@ public class Seeder implements CommandLineRunner {
                 null,
                 null);
         Producto producto4 = new Producto("Anillo de diamante",
-                "https://i.imgur.com/6mkk4WD.jpg",
+                "https://i.imgur.com/0xwpco6.jpg",
                 "Anillo de diamantes, creado en oro de 18 quilates o platino, con un diamante central en talla brillante, engarzado en 6 delicadas garras de forma tradicional, para mostrar toda la luz de la gema. Es un solitario de diamantes tradicional que sin embargo presenta un brazo lleno de diseño y tendencia, con un doble perfil.",
                 100f,
                 "anillo",
@@ -117,7 +117,7 @@ public class Seeder implements CommandLineRunner {
                 null,
                 null);
         Producto producto5 = new Producto("Anillo de diamante",
-                "https://i.imgur.com/6mkk4WD.jpg",
+                "https://i.imgur.com/qGkaqi1.jpg",
                 "Anillo de diamantes, creado en oro de 18 quilates o platino, con un diamante central en talla brillante, engarzado en 6 delicadas garras de forma tradicional, para mostrar toda la luz de la gema. Es un solitario de diamantes tradicional que sin embargo presenta un brazo lleno de diseño y tendencia, con un doble perfil.",
                 100f,
                 "anillo",
@@ -159,7 +159,7 @@ public class Seeder implements CommandLineRunner {
                 null,
                 null);
         Producto producto7 = new Producto("Anillo de diamante",
-                "https://i.imgur.com/6mkk4WD.jpg",
+                "https://i.imgur.com/dUUdzpG.jpg",
                 "Anillo de diamantes, creado en oro de 18 quilates o platino, con un diamante central en talla brillante, engarzado en 6 delicadas garras de forma tradicional, para mostrar toda la luz de la gema. Es un solitario de diamantes tradicional que sin embargo presenta un brazo lleno de diseño y tendencia, con un doble perfil.",
                 100f,
                 "anillo",
@@ -180,7 +180,7 @@ public class Seeder implements CommandLineRunner {
                 null,
                 null);
         Producto producto8 = new Producto("Anillo de diamante",
-                "https://i.imgur.com/6mkk4WD.jpg",
+                "https://i.imgur.com/cCEqFas.jpg",
                 "Anillo de diamantes, creado en oro de 18 quilates o platino, con un diamante central en talla brillante, engarzado en 6 delicadas garras de forma tradicional, para mostrar toda la luz de la gema. Es un solitario de diamantes tradicional que sin embargo presenta un brazo lleno de diseño y tendencia, con un doble perfil.",
                 100f,
                 "anillo",
@@ -201,7 +201,7 @@ public class Seeder implements CommandLineRunner {
                 null,
                 null);
         Producto producto9 = new Producto("Anillo de diamante",
-                "https://i.imgur.com/6mkk4WD.jpg",
+                "https://i.imgur.com/NN8XSK3.jpg",
                 "Anillo de diamantes, creado en oro de 18 quilates o platino, con un diamante central en talla brillante, engarzado en 6 delicadas garras de forma tradicional, para mostrar toda la luz de la gema. Es un solitario de diamantes tradicional que sin embargo presenta un brazo lleno de diseño y tendencia, con un doble perfil.",
                 100f,
                 "anillo",
@@ -222,7 +222,7 @@ public class Seeder implements CommandLineRunner {
                 null,
                 null);
         Producto producto10 = new Producto("Anillo de diamante",
-                "https://i.imgur.com/6mkk4WD.jpg",
+                "https://i.imgur.com/GnTw2V9.jpg",
                 "Anillo de diamantes, creado en oro de 18 quilates o platino, con un diamante central en talla brillante, engarzado en 6 delicadas garras de forma tradicional, para mostrar toda la luz de la gema. Es un solitario de diamantes tradicional que sin embargo presenta un brazo lleno de diseño y tendencia, con un doble perfil.",
                 100f,
                 "anillo",
@@ -244,7 +244,7 @@ public class Seeder implements CommandLineRunner {
                 null);
 
         Producto producto11 = new Producto("Anillo de diamante",
-                "https://i.imgur.com/6mkk4WD.jpg",
+                "https://i.imgur.com/qZzwMKV.jpg",
                 "Anillo de diamantes, creado en oro de 18 quilates o platino, con un diamante central en talla brillante, engarzado en 6 delicadas garras de forma tradicional, para mostrar toda la luz de la gema. Es un solitario de diamantes tradicional que sin embargo presenta un brazo lleno de diseño y tendencia, con un doble perfil.",
                 100f,
                 "anillo",
@@ -266,7 +266,7 @@ public class Seeder implements CommandLineRunner {
                 null);
 
         Producto producto12 = new Producto("Anillo de diamante",
-                "https://i.imgur.com/6mkk4WD.jpg",
+                "https://i.imgur.com/QmFexFE.jpg",
                 "Anillo de diamantes, creado en oro de 18 quilates o platino, con un diamante central en talla brillante, engarzado en 6 delicadas garras de forma tradicional, para mostrar toda la luz de la gema. Es un solitario de diamantes tradicional que sin embargo presenta un brazo lleno de diseño y tendencia, con un doble perfil.",
                 100f,
                 "anillo",
@@ -288,7 +288,7 @@ public class Seeder implements CommandLineRunner {
                 null);
 
         Producto producto13 = new Producto("Anillo de diamante",
-                "https://i.imgur.com/6mkk4WD.jpg",
+                "https://i.imgur.com/ndQJ8YW.jpg",
                 "Anillo de diamantes, creado en oro de 18 quilates o platino, con un diamante central en talla brillante, engarzado en 6 delicadas garras de forma tradicional, para mostrar toda la luz de la gema. Es un solitario de diamantes tradicional que sin embargo presenta un brazo lleno de diseño y tendencia, con un doble perfil.",
                 100f,
                 "anillo",
@@ -354,47 +354,47 @@ public class Seeder implements CommandLineRunner {
                 null);
 
         Producto producto16 = new Producto("Anillo de diamante",
-                "https://i.imgur.com/6mkk4WD.jpg",
+                "https://i.imgur.com/j5wDEiV.jpg",
                 "Anillo de diamantes, creado en oro de 18 quilates o platino, con un diamante central en talla brillante, engarzado en 6 delicadas garras de forma tradicional, para mostrar toda la luz de la gema. Es un solitario de diamantes tradicional que sin embargo presenta un brazo lleno de diseño y tendencia, con un doble perfil.",
                 100f,
-                "anillo",
+                "collar",
                 "Hombre",
-                62f,
+                null,
                 null,
                 null,
                 null,
                 null,
                 null,
 
-                "azul",
-                "14 gramos",
-                "14K",
-                "diamante",
-                5L,
-                "Oro",
                 null,
+                null,
+                null,
+                null,
+                null,
+                "oro",
+                "magnetico",
                 null);
 
         Producto producto17 = new Producto("Anillo de diamante",
-                "https://i.imgur.com/6mkk4WD.jpg",
+                "https://i.imgur.com/SsDChXF.jpg",
                 "Anillo de diamantes, creado en oro de 18 quilates o platino, con un diamante central en talla brillante, engarzado en 6 delicadas garras de forma tradicional, para mostrar toda la luz de la gema. Es un solitario de diamantes tradicional que sin embargo presenta un brazo lleno de diseño y tendencia, con un doble perfil.",
                 100f,
-                "anillo",
-                "Hombre",
-                62f,
+                "collar",
+                "Mujer",
+                null,
                 null,
                 null,
                 null,
                 null,
                 null,
 
-                "azul",
-                "14 gramos",
-                "14K",
-                "diamante",
-                5L,
-                "Oro",
                 null,
+                null,
+                null,
+                null,
+                null,
+                "oro",
+                "mosqueton",
                 null);
 
         Producto producto18 = new Producto("Anillo de diamante",
@@ -525,7 +525,7 @@ public class Seeder implements CommandLineRunner {
         productoRepository.save(producto10);
         productoRepository.save(producto11);
         productoRepository.save(producto12);
-        productoRepository.save(producto12);
+        productoRepository.save(producto13);
         productoRepository.save(producto14);
         productoRepository.save(producto15);
         productoRepository.save(producto16);

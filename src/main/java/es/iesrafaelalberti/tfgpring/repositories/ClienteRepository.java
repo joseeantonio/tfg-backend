@@ -7,4 +7,6 @@ public interface ClienteRepository extends CrudRepository <Cliente,Long> {
 
     Cliente findByCorreo(String email);
 
+
+
 }
