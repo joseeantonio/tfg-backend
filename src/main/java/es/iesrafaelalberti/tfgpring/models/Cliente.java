@@ -1,6 +1,7 @@
 package es.iesrafaelalberti.tfgpring.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import es.iesrafaelalberti.tfgpring.dto.ClienteCreateDTO;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -42,5 +43,15 @@ public class Cliente {
         this.fecha_nac = fecha_nac;
         this.admin = admin;
         this.username = username;
+    }
+
+    public Cliente(ClienteCreateDTO clienteCreateDTO) {
+        this.nombre = clienteCreateDTO.getNombre();
+        this.apellidos = clienteCreateDTO.getApellidos();
+        this.correo = clienteCreateDTO.getCorreo();
+        this.contraseña = new BCryptPasswordEncoder().encode(clienteCreateDTO.getContraseña());;
+        this.fecha_nac = clienteCreateDTO.getFecha_nac();
+        this.admin = false;
+        this.username = clienteCreateDTO.getUsername();
     }
 }

@@ -20,14 +20,13 @@ public class PedidoDTO {
     private String fech_pedido;
     private String informacion;
     private Long clienteId;
-    private List<ProductoCantidad> productos;
+    private List<ProductoCantidad> productos = new ArrayList<ProductoCantidad>();
 
     public PedidoDTO(Pedido pedido) {
         this.id = pedido.getId();
         this.fech_pedido = pedido.getFech_pedido();
         this.informacion = pedido.getInformacion();
         this.clienteId = pedido.getCliente().getId();
-        this.productos = new ArrayList<ProductoCantidad>();
         for (ProductoPedido productoPedido: pedido.getProductoPedidos()) {
             productos.add(new ProductoCantidad(productoPedido.getProducto().getId(),productoPedido.getCantidad()));
         }

@@ -1,5 +1,7 @@
 package es.iesrafaelalberti.tfgpring.controllers;
 
+import es.iesrafaelalberti.tfgpring.dto.ClienteCreateDTO;
+import es.iesrafaelalberti.tfgpring.dto.ClienteDTO;
 import es.iesrafaelalberti.tfgpring.models.Cliente;
 import es.iesrafaelalberti.tfgpring.repositories.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,9 +31,9 @@ public class ClienteController {
 
 //    Creamos un cliente con la informacion del body
     @PostMapping("/clientes/create")
-    public ResponseEntity<Object> create(@RequestBody Cliente cliente) {
-        clienteRepository.save(cliente);
-        return new ResponseEntity<>(cliente, HttpStatus.OK);
+    public ResponseEntity<Object> create(@RequestBody ClienteCreateDTO clienteCreateDTO) {
+        Cliente cliente = clienteRepository.save(new Cliente(clienteCreateDTO));
+        return new ResponseEntity<>(new ClienteDTO(cliente), HttpStatus.OK);
     }
 
 //    Eliminamos un cliente con el id que pongamos en la ruta

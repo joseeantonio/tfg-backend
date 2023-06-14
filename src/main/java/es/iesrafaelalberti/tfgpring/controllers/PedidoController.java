@@ -33,7 +33,13 @@ public class PedidoController {
 //    Vemos el pedido con ese id que pongamos en la ruta
     @GetMapping("/pedidos/{id}")
     public ResponseEntity<Object> show(@PathVariable("id") Long id) {
-        return new ResponseEntity<>(pedidoRepository.findById(id), HttpStatus.OK);
+        Optional<Pedido> pedidoOptional = pedidoRepository.findById(id);
+        if (pedidoOptional.isPresent()) {
+            PedidoDTO pedidoDTO = new PedidoDTO(pedidoOptional.get());
+            return new ResponseEntity<>(pedidoDTO, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 
 //    Creamos un pedido con la informacion del body
