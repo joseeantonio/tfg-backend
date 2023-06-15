@@ -26,7 +26,9 @@ public class ClienteController {
 //    Vemos el cliente con ese id que pongamos en la ruta
     @GetMapping("/clientes/{id}")
     public ResponseEntity<Object> show(@PathVariable("id") Long id){
-        return new ResponseEntity<>(clienteRepository.findById(id), HttpStatus.OK);
+        Optional<Cliente> cliente = clienteRepository.findById(id);
+        ClienteDTO clienteDTO = cliente.map(ClienteDTO::new).orElse(null);
+        return new ResponseEntity<>(clienteDTO, HttpStatus.OK);
     }
 
 //    Creamos un cliente con la informacion del body
@@ -46,12 +48,36 @@ public class ClienteController {
 
 //    Actualizamos un cliente , cogiendo datos del body y con el id que ponemos en la ruta
     @PutMapping("/clientes/{id}")
-    public ResponseEntity<Object> update(@PathVariable("id") Long id, @RequestBody Cliente cliente) {
-        Optional<Cliente> antiguoCliente = clienteRepository.findById(id);
-        if(antiguoCliente.isPresent()) {
-            cliente.setId(id);
-            clienteRepository.save(cliente);
-            return new ResponseEntity<>(cliente, HttpStatus.OK);
+    public ResponseEntity<Object> update(@PathVariable("id") Long id, @RequestBody ClienteCreateDTO clienteCreateDTO) {
+        Optional<Cliente> antiguoClienteOptional = clienteRepository.findById(id);
+        if(antiguoClienteOptional.isPresent()) {
+
+            Cliente antiguoCliente = antiguoClienteOptional.get();
+            Cliente nuevoCliente = new Cliente(clienteCreateDTO);
+
+            // Copiar los atributos del nuevoCliente al antiguoCliente solo si no son nulos
+            if (nuevoCliente.getNombre() != null) {
+                antiguoCliente.setNombre(nuevoCliente.getNombre());
+            }
+            if (nuevoCliente.getApellidos() != null) {
+                antiguoCliente.setApellidos(nuevoCliente.getApellidos());
+            }
+            if (nuevoCliente.getCorreo() != null) {
+                antiguoCliente.setCorreo(nuevoCliente.getCorreo());
+            }
+            if (nuevoCliente.getContraseña() != null) {
+                antiguoCliente.setContraseña(nuevoCliente.getContraseña());
+            }
+            if (nuevoCliente.getUsername() != null) {
+                antiguoCliente.setUsername(nuevoCliente.getUsername());
+            }
+            if (nuevoCliente.getFecha_nac() != null) {
+                antiguoCliente.setFecha_nac(nuevoCliente.getFecha_nac());
+            }
+
+
+            clienteRepository.save(antiguoCliente);
+            return new ResponseEntity<>(new ClienteDTO(antiguoCliente), HttpStatus.OK);
         }
         return new ResponseEntity<>(false, HttpStatus.NOT_FOUND);
     }

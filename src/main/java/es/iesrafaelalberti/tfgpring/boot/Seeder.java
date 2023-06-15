@@ -12,8 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import java.util.HashSet;
-
 @Component
 public class Seeder implements CommandLineRunner {
 
@@ -143,19 +141,20 @@ public class Seeder implements CommandLineRunner {
                 100f,
                 "reloj",
                 "Hombre",
-                62f,
+                34f,
+                "acero inoxidable",
+                "cuero",
+                "negro",
+                "mecanico",
+                100f,
+
+                null,
                 null,
                 null,
                 null,
                 null,
                 null,
 
-                "azul",
-                "14 gramos",
-                "14K",
-                "diamante",
-                5L,
-                "Oro",
                 null,
                 null);
         Producto producto7 = new Producto("Anillo de diamante",
@@ -315,19 +314,20 @@ public class Seeder implements CommandLineRunner {
                 100f,
                 "reloj",
                 "Hombre",
-                62f,
+                34f,
+                "acero inoxidable",
+                "cuero",
+                "negro",
+                "mecanico",
+                100f,
+
+                null,
                 null,
                 null,
                 null,
                 null,
                 null,
 
-                "azul",
-                "14 gramos",
-                "14K",
-                "diamante",
-                5L,
-                "Oro",
                 null,
                 null);
 
@@ -337,19 +337,20 @@ public class Seeder implements CommandLineRunner {
                 100f,
                 "reloj",
                 "Hombre",
-                62f,
+                34f,
+                "acero inoxidable",
+                "cuero",
+                "negro",
+                "mecanico",
+                100f,
+
+                null,
                 null,
                 null,
                 null,
                 null,
                 null,
 
-                "azul",
-                "14 gramos",
-                "14K",
-                "diamante",
-                5L,
-                "Oro",
                 null,
                 null);
 
@@ -403,19 +404,20 @@ public class Seeder implements CommandLineRunner {
                 100f,
                 "reloj",
                 "Hombre",
-                62f,
+                34f,
+                "acero inoxidable",
+                "cuero",
+                "negro",
+                "mecanico",
+                100f,
+
+                null,
                 null,
                 null,
                 null,
                 null,
                 null,
 
-                "azul",
-                "14 gramos",
-                "14K",
-                "diamante",
-                5L,
-                "Oro",
                 null,
                 null);
 
@@ -425,19 +427,20 @@ public class Seeder implements CommandLineRunner {
                 100f,
                 "reloj",
                 "Hombre",
-                62f,
+                34f,
+                "acero inoxidable",
+                "cuero",
+                "negro",
+                "mecanico",
+                100f,
+
+                null,
                 null,
                 null,
                 null,
                 null,
                 null,
 
-                "azul",
-                "14 gramos",
-                "14K",
-                "diamante",
-                5L,
-                "Oro",
                 null,
                 null);
 
@@ -446,20 +449,21 @@ public class Seeder implements CommandLineRunner {
                 "Anillo de diamantes, creado en oro de 18 quilates o platino, con un diamante central en talla brillante, engarzado en 6 delicadas garras de forma tradicional, para mostrar toda la luz de la gema. Es un solitario de diamantes tradicional que sin embargo presenta un brazo lleno de diseño y tendencia, con un doble perfil.",
                 100f,
                 "reloj",
-                "Mujer",
-                70f,
-                null,
-                null,
-                null,
-                null,
-                null,
+                "Hombre",
+                34f,
+                "acero inoxidable",
+                "cuero",
+                "negro",
+                "mecanico",
+                100f,
 
                 null,
                 null,
                 null,
                 null,
                 null,
-                "Oro",
+                null,
+
 
                 "mosqueton",
                 null);
@@ -470,19 +474,20 @@ public class Seeder implements CommandLineRunner {
                 100f,
                 "reloj",
                 "Hombre",
-                62f,
+                34f,
+                "acero inoxidable",
+                "cuero",
+                "negro",
+                "mecanico",
+                100f,
+
+                null,
                 null,
                 null,
                 null,
                 null,
                 null,
 
-                "azul",
-                "14 gramos",
-                "14K",
-                "diamante",
-                5L,
-                "Oro",
                 null,
                 null);
 
@@ -543,11 +548,61 @@ public class Seeder implements CommandLineRunner {
         clienteRepository.save(cliente1);
 
 
-        Pedido pedido1 = new Pedido("23/34/02", "Si no estoy, entregar en mi casa", cliente1, new HashSet<>());
+        Pedido pedido1 = new Pedido("23/34/02", "Si no estoy, entregar en mi casa", cliente1);
         pedidoRepository.save(pedido1);
 
         ProductoPedido productoPedido1 = new ProductoPedido(1,pedido1,producto1);
         productoPedidoRepository.save(productoPedido1);
+        ProductoPedido productoPedido2 = new ProductoPedido(2,pedido1,producto6);
+        productoPedidoRepository.save(productoPedido2);
+        ProductoPedido productoPedido3 = new ProductoPedido(1,pedido1,producto10);
+        productoPedidoRepository.save(productoPedido3);
+        ProductoPedido productoPedido4 = new ProductoPedido(1,pedido1,producto11);
+        productoPedidoRepository.save(productoPedido4);
+        ProductoPedido productoPedido5 = new ProductoPedido(5,pedido1,producto12);
+        productoPedidoRepository.save(productoPedido5);
+
+        Pedido pedido2 = new Pedido("23/34/02", "Si no estoy, entregar en mi casa", cliente1);
+        pedidoRepository.save(pedido2);
+
+        ProductoPedido productoPedido6 = new ProductoPedido(1,pedido2,producto1);
+        productoPedidoRepository.save(productoPedido6);
+        ProductoPedido productoPedido7 = new ProductoPedido(2,pedido2,producto6);
+        productoPedidoRepository.save(productoPedido7);
+        ProductoPedido productoPedido8 = new ProductoPedido(1,pedido2,producto10);
+        productoPedidoRepository.save(productoPedido8);
+        ProductoPedido productoPedido9 = new ProductoPedido(1,pedido2,producto11);
+        productoPedidoRepository.save(productoPedido9);
+        ProductoPedido productoPedido10 = new ProductoPedido(5,pedido2,producto12);
+        productoPedidoRepository.save(productoPedido10);
+
+        Pedido pedido3 = new Pedido("23/34/02", "Si no estoy, entregar en mi casa", cliente1);
+        pedidoRepository.save(pedido3);
+
+        ProductoPedido productoPedido11 = new ProductoPedido(1,pedido3,producto1);
+        productoPedidoRepository.save(productoPedido11);
+        ProductoPedido productoPedido12 = new ProductoPedido(2,pedido3,producto6);
+        productoPedidoRepository.save(productoPedido12);
+        ProductoPedido productoPedido13 = new ProductoPedido(1,pedido3,producto10);
+        productoPedidoRepository.save(productoPedido13);
+        ProductoPedido productoPedido14 = new ProductoPedido(1,pedido3,producto11);
+        productoPedidoRepository.save(productoPedido14);
+        ProductoPedido productoPedido15 = new ProductoPedido(5,pedido3,producto12);
+        productoPedidoRepository.save(productoPedido15);
+
+        Pedido pedido4 = new Pedido("23/34/02", "Si no estoy, entregar en mi casa", cliente1);
+        pedidoRepository.save(pedido4);
+
+        ProductoPedido productoPedido16 = new ProductoPedido(1,pedido4,producto1);
+        productoPedidoRepository.save(productoPedido16);
+        ProductoPedido productoPedido17 = new ProductoPedido(2,pedido4,producto6);
+        productoPedidoRepository.save(productoPedido17);
+        ProductoPedido productoPedido18 = new ProductoPedido(1,pedido4,producto10);
+        productoPedidoRepository.save(productoPedido18);
+        ProductoPedido productoPedido19 = new ProductoPedido(1,pedido4,producto11);
+        productoPedidoRepository.save(productoPedido19);
+        ProductoPedido productoPedido20 = new ProductoPedido(5,pedido4,producto12);
+        productoPedidoRepository.save(productoPedido20);
 
 
     }

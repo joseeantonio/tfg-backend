@@ -4,6 +4,7 @@ import es.iesrafaelalberti.tfgpring.dto.PedidoCreateDTO;
 import es.iesrafaelalberti.tfgpring.dto.PedidoDTO;
 import es.iesrafaelalberti.tfgpring.models.Pedido;
 import es.iesrafaelalberti.tfgpring.repositories.PedidoRepository;
+import es.iesrafaelalberti.tfgpring.services.PedidosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +20,9 @@ public class PedidoController {
 
     @Autowired
     PedidoRepository pedidoRepository;
+
+    @Autowired
+    PedidosService pedidoService;
 
 //    Vemos todos los pedidos
     @GetMapping("/pedidos")
@@ -45,8 +49,10 @@ public class PedidoController {
 //    Creamos un pedido con la informacion del body
     @PostMapping("/pedidos/create")
     public ResponseEntity<Object> create(@RequestBody PedidoCreateDTO pedidoCreateDTO) {
-        Pedido pedido = pedidoRepository.save(new Pedido(pedidoCreateDTO));
-        return new ResponseEntity<>(pedido, HttpStatus.OK);
+
+        return new ResponseEntity<>(
+                new PedidoDTO(pedidoService.pedidoCreate(pedidoCreateDTO))
+                , HttpStatus.OK);
     }
 
 //    Eliminamos un pedido con el id que pongamos en la ruta
