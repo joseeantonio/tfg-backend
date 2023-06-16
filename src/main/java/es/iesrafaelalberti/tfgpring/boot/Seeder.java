@@ -137,16 +137,16 @@ public class Seeder implements CommandLineRunner {
                 null);
         Producto producto6 = new Producto("Reloj ORIENT",
                 "https://i.imgur.com/0Ylf6tj.jpg",
-                "Anillo de diamantes, creado en oro de 18 quilates o platino, con un diamante central en talla brillante, engarzado en 6 delicadas garras de forma tradicional, para mostrar toda la luz de la gema. Es un solitario de diamantes tradicional que sin embargo presenta un brazo lleno de diseño y tendencia, con un doble perfil.",
+                "Reloj de diamantes, creado en oro de 18 quilates o platino, con un diamante central en talla brillante, engarzado en 6 delicadas garras de forma tradicional, para mostrar toda la luz de la gema. Es un solitario de diamantes tradicional que sin embargo presenta un brazo lleno de diseño y tendencia, con un doble perfil.",
                 100f,
                 "reloj",
                 "Hombre",
-                34f,
+                39f,
                 "acero inoxidable",
-                "cuero",
+                "nylon",
                 "negro",
                 "mecanico",
-                100f,
+                300f,
 
                 null,
                 null,
@@ -313,9 +313,9 @@ public class Seeder implements CommandLineRunner {
                 "Anillo de diamantes, creado en oro de 18 quilates o platino, con un diamante central en talla brillante, engarzado en 6 delicadas garras de forma tradicional, para mostrar toda la luz de la gema. Es un solitario de diamantes tradicional que sin embargo presenta un brazo lleno de diseño y tendencia, con un doble perfil.",
                 100f,
                 "reloj",
-                "Hombre",
-                34f,
-                "acero inoxidable",
+                "Mujer",
+                42f,
+                "bronce",
                 "cuero",
                 "negro",
                 "mecanico",
@@ -449,13 +449,13 @@ public class Seeder implements CommandLineRunner {
                 "Anillo de diamantes, creado en oro de 18 quilates o platino, con un diamante central en talla brillante, engarzado en 6 delicadas garras de forma tradicional, para mostrar toda la luz de la gema. Es un solitario de diamantes tradicional que sin embargo presenta un brazo lleno de diseño y tendencia, con un doble perfil.",
                 100f,
                 "reloj",
-                "Hombre",
+                "Mujer",
                 34f,
                 "acero inoxidable",
                 "cuero",
                 "negro",
                 "mecanico",
-                100f,
+                0f,
 
                 null,
                 null,
@@ -514,6 +514,69 @@ public class Seeder implements CommandLineRunner {
                 null,
                 null);
 
+        Producto producto23 = new Producto("Collar de diamante",
+                "https://i.imgur.com/qNf6XGO.jpg",
+                "Anillo de diamantes, creado en oro de 18 quilates o platino, con un diamante central en talla brillante, engarzado en 6 delicadas garras de forma tradicional, para mostrar toda la luz de la gema. Es un solitario de diamantes tradicional que sin embargo presenta un brazo lleno de diseño y tendencia, con un doble perfil.",
+                100f,
+                "collar",
+                "Mujer",
+                50f,
+                null,
+                null,
+                null,
+                null,
+                null,
+
+                null,
+                null,
+                null,
+                null,
+                null,
+                "oro",
+                "mosqueton",
+                null);
+        Producto producto24 = new Producto("Collar de diamante",
+                "https://i.imgur.com/SsDChXF.jpg",
+                "Anillo de diamantes, creado en oro de 18 quilates o platino, con un diamante central en talla brillante, engarzado en 6 delicadas garras de forma tradicional, para mostrar toda la luz de la gema. Es un solitario de diamantes tradicional que sin embargo presenta un brazo lleno de diseño y tendencia, con un doble perfil.",
+                100f,
+                "collar",
+                "Mujer",
+                70f,
+                null,
+                null,
+                null,
+                null,
+                null,
+
+                null,
+                null,
+                null,
+                null,
+                null,
+                "oro",
+                "gancho",
+                null);
+        Producto producto25 = new Producto("Collar de diamante",
+                "https://i.imgur.com/FlikYOq.jpg",
+                "Anillo de diamantes, creado en oro de 18 quilates o platino, con un diamante central en talla brillante, engarzado en 6 delicadas garras de forma tradicional, para mostrar toda la luz de la gema. Es un solitario de diamantes tradicional que sin embargo presenta un brazo lleno de diseño y tendencia, con un doble perfil.",
+                100f,
+                "collar",
+                "Hombre",
+                40f,
+                null,
+                null,
+                null,
+                null,
+                null,
+
+                null,
+                null,
+                null,
+                null,
+                null,
+                "plata",
+                "mosqueton",
+                null);
 
 
 
@@ -540,6 +603,9 @@ public class Seeder implements CommandLineRunner {
         productoRepository.save(producto20);
         productoRepository.save(producto21);
         productoRepository.save(producto22);
+        productoRepository.save(producto23);
+        productoRepository.save(producto24);
+        productoRepository.save(producto25);
 
 
 
