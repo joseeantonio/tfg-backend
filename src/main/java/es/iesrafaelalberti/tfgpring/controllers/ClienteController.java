@@ -7,7 +7,9 @@ import es.iesrafaelalberti.tfgpring.repositories.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.Optional;
 
 @RestController
@@ -47,39 +49,31 @@ public class ClienteController {
     }
 
 //    Actualizamos un cliente , cogiendo datos del body y con el id que ponemos en la ruta
-    @PutMapping("/clientes/{id}")
-    public ResponseEntity<Object> update(@PathVariable("id") Long id, @RequestBody ClienteCreateDTO clienteCreateDTO) {
-        Optional<Cliente> antiguoClienteOptional = clienteRepository.findById(id);
-        if(antiguoClienteOptional.isPresent()) {
+@PutMapping("/clientes/{id}")
+public ResponseEntity<Object> update(@PathVariable("id") Long id, @RequestBody Cliente cliente) {
+    Optional<Cliente> antiguoClienteOptional = clienteRepository.findById(id);
+    if (antiguoClienteOptional.isPresent()) {
+        Cliente antiguoCliente = antiguoClienteOptional.get();
 
-            Cliente antiguoCliente = antiguoClienteOptional.get();
-            Cliente nuevoCliente = new Cliente(clienteCreateDTO);
-
-            // Copiar los atributos del nuevoCliente al antiguoCliente solo si no son nulos
-            if (nuevoCliente.getNombre() != null) {
-                antiguoCliente.setNombre(nuevoCliente.getNombre());
-            }
-            if (nuevoCliente.getApellidos() != null) {
-                antiguoCliente.setApellidos(nuevoCliente.getApellidos());
-            }
-            if (nuevoCliente.getCorreo() != null) {
-                antiguoCliente.setCorreo(nuevoCliente.getCorreo());
-            }
-            if (nuevoCliente.getContraseña() != null) {
-                antiguoCliente.setContraseña(nuevoCliente.getContraseña());
-            }
-            if (nuevoCliente.getUsername() != null) {
-                antiguoCliente.setUsername(nuevoCliente.getUsername());
-            }
-            if (nuevoCliente.getFecha_nac() != null) {
-                antiguoCliente.setFecha_nac(nuevoCliente.getFecha_nac());
-            }
-
-
-            clienteRepository.save(antiguoCliente);
-            return new ResponseEntity<>(new ClienteDTO(antiguoCliente), HttpStatus.OK);
+        // Verificar si se proporcionó una contraseña y actualizar solo si no está vacía
+        if (cliente.getContraseña() != null && !cliente.getContraseña().isEmpty()) {
+            // Encriptar la nueva contraseña
+            String contraseñaEncriptada = new BCryptPasswordEncoder().encode(cliente.getContraseña());
+            antiguoCliente.setContraseña(contraseñaEncriptada);
         }
-        return new ResponseEntity<>(false, HttpStatus.NOT_FOUND);
+
+        // Actualizar otros campos del cliente
+        antiguoCliente.setNombre(cliente.getNombre());
+        antiguoCliente.setApellidos(cliente.getApellidos());
+        antiguoCliente.setCorreo(cliente.getCorreo());
+        antiguoCliente.setUsername(cliente.getUsername());
+        antiguoCliente.setFecha_nac(cliente.getFecha_nac());
+
+        clienteRepository.save(antiguoCliente);
+        return new ResponseEntity<>(antiguoCliente, HttpStatus.OK);
     }
+
+    return new ResponseEntity<>("Cliente no encontrado", HttpStatus.NOT_FOUND);
+}
 
 }
